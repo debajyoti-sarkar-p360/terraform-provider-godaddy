@@ -96,7 +96,7 @@ func (c *Client) UpdateDomainRecords(customerID, domain string, records []*Domai
 		log.Println(domainURL)
 		log.Println(buffer)
 
-		req, err := http.NewRequest(http.MethodPut, domainURL, buffer)
+		req, err := http.NewRequest(http.MethodPatch, domainURL, buffer)
 		if err != nil {
 			return err
 		}
